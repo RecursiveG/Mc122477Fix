@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "me.sizableshrimp.mc122477fix.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "client": [
+    "MixinKeyboard",
+    "MixinMinecraftClient"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
