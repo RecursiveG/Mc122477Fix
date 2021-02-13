@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "mc122477fix",
+  "version": "${version}",
+  "name": "Mc122477Fix",
+  "description": "A simple mod that fixes MC-122477, the random extra chat character on Unix-based systems",
+  "authors": [
+    "SizableShrimp"
+  ],
+  "contact": {
+    "repo": "https://github.com/SizableShrimp/Mc122477fix"
+  },
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "me.sizableshrimp.mc122477fix.Mc122477Fix"
+    ]
+  },
+  "mixins": [
+    "mc122477fix.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.4.0",
+    "fabric": "*",
+    "minecraft": ">=1.16"
+  }
+}
