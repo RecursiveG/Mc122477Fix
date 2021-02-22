@@ -19,7 +19,7 @@ public class MixinKeyboard {
             ci.cancel();
     }
 
-    @Inject(method = "onChar", at = @At(value = "FIELD", target = "Lnet/minecraft/client/Keyboard;client:Lnet/minecraft/client/MinecraftClient;", ordinal = 0), cancellable = true)
+    @Inject(method = "onChar", at = @At(value = "FIELD", target = "Lnet/minecraft/client/MinecraftClient;currentScreen:Lnet/minecraft/client/gui/screen/Screen;", ordinal = 0), cancellable = true)
     private void injectOnChar(long window, int i, int j, CallbackInfo ci) {
         ActionResult result = KeyboardCharTypedCallback.EVENT.invoker().onCharTyped(window, i, j);
 
