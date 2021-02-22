@@ -8,10 +8,13 @@
     "SizableShrimp"
   ],
   "contact": {
-    "repo": "https://github.com/RecursiveG/Mc122477Fix"
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/mc122477fix",
+    "sources": "https://github.com/RecursiveG/Mc122477Fix",
+    "issues": "https://github.com/RecursiveG/Mc122477Fix/issues"
   },
   "license": "MIT",
-  "environment": "*",
+  "icon": "assets/mc122477fix/icon.png",
+  "environment": "client",
   "entrypoints": {
     "client": [
       "me.sizableshrimp.mc122477fix.Mc122477Fix"
@@ -21,8 +24,8 @@
     "mc122477fix.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.4.0",
+    "fabricloader": ">=0.10.0",
     "fabric": "*",
-    "minecraft": ">=1.16"
+    "minecraft": ">=1.15"
   }
 }
