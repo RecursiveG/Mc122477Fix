@@ -5,7 +5,7 @@
   "compatibilityLevel": "JAVA_8",
   "client": [
     "MixinKeyboard",
-    "MixinMinecraftClient"
+    "MixinRenderSystem"
   ],
   "injectors": {
     "defaultRequire": 1
