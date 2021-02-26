@@ -1,7 +1,7 @@
 # MC-122477 Fix
-![[CurseForge](https://www.curseforge.com/minecraft/mc-mods/mc122477fix)](https://cf.way2muchnoise.eu/versions/432448.svg)
-![GitHub](https://img.shields.io/github/license/RecursiveG/Mc122477Fix)
-![Mojira issue MC-122477](https://img.shields.io/jira/issue/MC-122477?baseUrl=https%3A%2F%2Fbugs.mojang.com)
+[![CurseForge](https://cf.way2muchnoise.eu/versions/432448.svg)](https://www.curseforge.com/minecraft/mc-mods/mc122477fix)
+[![GitHub](https://img.shields.io/github/license/RecursiveG/Mc122477Fix)](https://github.com/RecursiveG/Mc122477Fix)
+[![Mojira issue MC-122477](https://img.shields.io/jira/issue/MC-122477?baseUrl=https%3A%2F%2Fbugs.mojang.com)](https://bugs.mojang.com/browse/MC-122477)
 
 Fixes the extra `t` or `/` issue on some Linux desktop environments when opening the chat window.
 
