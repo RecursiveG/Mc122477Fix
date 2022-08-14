@@ -3,7 +3,6 @@ package me.recursiveg;
 import net.minecraft.client.gui.screens.ChatScreen;
 import net.minecraft.client.gui.screens.inventory.CreativeModeInventoryScreen;
 import net.minecraftforge.client.event.ScreenEvent;
-import net.minecraftforge.client.event.ScreenOpenEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -18,14 +17,21 @@ public class Mc122477Fix {
     long renderTicksSinceScreenOpen = 0;
 
     @SubscribeEvent
-    public void onScreenOpen(ScreenOpenEvent ev) {
-        if (ev.getScreen() instanceof ChatScreen || ev.getScreen() instanceof CreativeModeInventoryScreen) {
+    public void onScreenOpen(ScreenEvent.Opening ev) {
+        if (ev.getNewScreen() instanceof ChatScreen || ev.getNewScreen() instanceof CreativeModeInventoryScreen) {
             renderTicksSinceScreenOpen = 0;
         }
     }
 
     @SubscribeEvent
-    public void onCharTyped(ScreenEvent.KeyboardCharTypedEvent.Pre ev) {
+    public void onKeyPressed(ScreenEvent.KeyPressed.Pre ev) {
+        if (renderTicksSinceScreenOpen < 2) {
+            ev.setCanceled(true);
+        }
+    }
+
+    @SubscribeEvent
+    public void onCharTyped(ScreenEvent.CharacterTyped.Pre ev) {
         if (renderTicksSinceScreenOpen < 2) {
             ev.setCanceled(true);
         }
@@ -33,6 +39,8 @@ public class Mc122477Fix {
 
     @SubscribeEvent
     public void onPostClientTick(TickEvent.RenderTickEvent ev) {
-        if (ev.phase == TickEvent.Phase.END) renderTicksSinceScreenOpen++;
+        if (ev.phase == TickEvent.Phase.END) {
+            renderTicksSinceScreenOpen++;
+        }
     }
 }
