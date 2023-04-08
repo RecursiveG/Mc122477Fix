@@ -24,7 +24,7 @@ public class Mc122477Fix implements ClientModInitializer {
                 return ActionResult.PASS;
 
             // If the chat or command key was pressed, store what poll count it happened on.
-            if (client.options.keyChat.matchesKey(key, scancode) || client.options.keyCommand.matchesKey(key, scancode)) {
+            if (client.options.chatKey.matchesKey(key, scancode) || client.options.commandKey.matchesKey(key, scancode)) {
                 this.prevKeyPoll = this.pollCount;
             } else {
                 // Otherwise, set to -1

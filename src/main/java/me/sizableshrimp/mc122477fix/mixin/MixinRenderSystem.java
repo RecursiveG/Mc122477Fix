@@ -9,7 +9,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(RenderSystem.class)
 public class MixinRenderSystem {
-    @Inject(method = "flipFrame", at = @At(value = "INVOKE", target = "Lorg/lwjgl/glfw/GLFW;glfwPollEvents()V", shift = At.Shift.AFTER))
+    @Inject(method = "pollEvents",
+            at = @At(value = "INVOKE", target = "Lorg/lwjgl/glfw/GLFW;glfwPollEvents()V", shift = At.Shift.AFTER),
+            remap = false)
     private static void injectGlfwPoll(CallbackInfo ci) {
         GLFWPollCallback.EVENT.invoker().onPoll();
     }
